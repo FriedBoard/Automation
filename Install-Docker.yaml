@@ -15,7 +15,6 @@
         apt_key:
           url: https://download.docker.com/linux/ubuntu/gpg
           state: present
-          keyring: /usr/share/keyrings/docker-archive-keyring.gpg
       - name: Add docker engine repository
         apt_repository:
           repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} main
