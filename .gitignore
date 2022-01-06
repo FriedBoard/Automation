@@ -1,2 +1,7 @@
 # Ignore ansible hosts file
 hosts.txt
+Terraform/secrets.tfvars
+Terraform/terraform.tfstate
+Terraform/.terraform.lock.hcl
+Terraform/CHANGELOG.md
+Terraform/.terraform
