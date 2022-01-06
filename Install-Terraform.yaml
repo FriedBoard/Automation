@@ -1,6 +1,6 @@
 ---
   - name: Install & Update Terraform + Dependencies
-    scope: terraform
+    hosts: terraform
     become: yes
     tasks:
       - name: Install gnupg
