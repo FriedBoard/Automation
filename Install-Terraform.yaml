@@ -17,7 +17,7 @@
           state: present
       - name: Add terraform repository
         apt_repository:
-          repo: deb https://apt.releases.hashicorp.com main
+          repo: deb [arch=amd64] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main
           state: present
       - name: Install terraform
         apt:
