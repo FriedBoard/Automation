@@ -1,0 +1,34 @@
+---
+  - name: Install docker engine and dependencies
+    hosts: docker
+    become: yes
+    tasks:
+      - name: Install gnupg
+        apt:
+          name: gnupg
+          state: latest
+      - name: Install ca-certificates
+        apt:
+          name: ca-certificates
+          state: latest
+      - name: Add gpg key
+        apt_key:
+          url: https://download.docker.com/linux/ubuntu/gpg
+          state: present
+          keyring: /usr/share/keyrings/docker-archive-keyring.gpg
+      - name: Add docker engine repository
+        apt_repository:
+          repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} main
+          state: present
+      - name: Install docker-ce
+        apt:
+          name: docker-ce
+          state: latest
+      - name: Install docker-ce-cli
+        apt:
+          name: docker-ce-cli
+          state: latest
+      - name: Install contianerd.io
+        apt:
+          name: contianerd.io
+          state: latest
