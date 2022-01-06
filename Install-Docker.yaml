@@ -29,5 +29,5 @@
           state: latest
       - name: Install contianerd.io
         apt:
-          name: contianerd.io
+          name: containerd.io
           state: latest
