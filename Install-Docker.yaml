@@ -17,8 +17,12 @@
           state: present
       - name: Add docker engine repository
         apt_repository:
-          repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} main
+          repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
           state: present
+      - name: Remove wrong docker engine repository
+        apt_repository:
+          repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} main
+          state: absent
       - name: Install docker-ce
         apt:
           name: docker-ce
