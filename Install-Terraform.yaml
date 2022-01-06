@@ -1,25 +1,25 @@
 ---
-- name: Install & Update Terraform + Dependencies
-  scope: terraform
-  become: yes
-  tasks:
-    - name: Install gnupg
-      apt:
-        name: gnupg
-        state: latest
-    - name: Install software-properties-common
-      apt:
-        name: software-properties-common
-        state: latest
-    - name: Add gpg key
-      apt_key:
-        url: https://apt.releases.hashicorp.com/gpg
-        state: present
-    - name: Add terraform repository
-      apt_repository:
-        repo: deb https://apt.releases.hashicorp.com main
-        state: present
-    - name: Install terraform
-      apt:
-        name: terraform
-        state: latest
+  - name: Install & Update Terraform + Dependencies
+    scope: terraform
+    become: yes
+    tasks:
+      - name: Install gnupg
+        apt:
+          name: gnupg
+          state: latest
+      - name: Install software-properties-common
+        apt:
+          name: software-properties-common
+          state: latest
+      - name: Add gpg key
+        apt_key:
+          url: https://apt.releases.hashicorp.com/gpg
+          state: present
+      - name: Add terraform repository
+        apt_repository:
+          repo: deb https://apt.releases.hashicorp.com main
+          state: present
+      - name: Install terraform
+        apt:
+          name: terraform
+          state: latest
