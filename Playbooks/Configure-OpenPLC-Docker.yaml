@@ -15,3 +15,4 @@
           name: openplc:v3
           build: 
             path: .
+          source: build
