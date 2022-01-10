@@ -1,6 +1,6 @@
 ---
   - name: Setup ansible docker plugin
-    hosts: localhost
+    hosts: openplc
     become: yes
     tasks:
       - name: Install community.docker role
