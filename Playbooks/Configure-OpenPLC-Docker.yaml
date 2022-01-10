@@ -1,13 +1,13 @@
 ---
   - name: Setup ansible docker plugin
-    hosts: openplc
+    hosts: localhost
     become: yes
     tasks:
       - name: Install community.docker role
         command: ansible-galaxy install -r Configure-OpenPLC-Docker-Requirements.yaml
 
   - name: Setup and run docker image
-    hosts: openplc
+    hosts: localhost
     become: yes
     tasks:
       - name: Build docker image
@@ -16,3 +16,4 @@
           build: 
             path: .
           source: build
+          docker_host: "{{ groups['openplc'] | map('extract', hostvars, ['ansible_host']) | join(',')}}"
