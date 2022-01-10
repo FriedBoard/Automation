@@ -24,10 +24,10 @@ provider "vmworkstation" {
 }
 
 resource "vmworkstation_vm" "test_machine" {
-  sourceid     = "QTR6F6BLLM7EVP62S4GIMKL4CJ5RJE84"
-  denomination = "NewInstance"
+  sourceid     = "VPTRCE0MK7NII3RH7PO0B68JQC3807RJ"
+  denomination = "NewInstance2"
   description  = "TestBox"
-  path         = "C:\\Users\\leroy\\Virtual Machines\\test_machine"
-  processors   = "2"
-  memory       = "1024"
+  path         = "C:\\Users\\leroy\\Virtual Machines\\NewInstance2\\"
+  processors   = "1"
+  memory       = "2048"
 }
